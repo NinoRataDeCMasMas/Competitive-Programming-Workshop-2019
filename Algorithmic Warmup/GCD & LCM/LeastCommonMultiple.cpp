@@ -11,10 +11,7 @@ using namespace std;
  */
 unsigned int GCD( unsigned long a, unsigned long b )
 {
-	if(b == 0)
-		return a;
-	else
-		return GCD(b, a%b);
+	return (b == 0) ? a : GCD(b, a%b); 
 }
 /**
  * @brief  Least common multiple.
