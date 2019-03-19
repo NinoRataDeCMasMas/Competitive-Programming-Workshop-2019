@@ -15,7 +15,7 @@ Cada módulo de información contiene una descripción del Paradigma correspondi
 
 Es un deporte mental en el cual los participantes resuelven un conjunto de problemas bien especificados a través de programas de computadora. Los estudiantes universitarios, principalmente de ingeniería y carreras asociadas a ciencias de la computación, participan en las competencias organizadas por ACM ICPC.
 
-![](https://github.com/NinoRataDeCMasMas/Competitive-Programming-Workshop/blob/master/images/icpcLogo.png =500x500)
+![](https://github.com/NinoRataDeCMasMas/Competitive-Programming-Workshop/blob/master/images/icpcLogo.png){ width=50% } 
 
 El concurso ACM ICPC es la competencia más importante y con mayor prestigio en el ámbito de la programación, que se lleva a cabo entre equipos de estudiantes que representan a las instituciones de educación superior. Entre marzo y octubre de cada año se realizan concursos preliminares a nivel nacional y los equipos mejor posicionados ganan un pase para competir en la Fase Regional que se celebra en Noviembre y comprende a México y Centro América. Finalmente los dos o tres mejores equipos dependiendo del desempeño alcanzado tienen la oportunidad de avanzar al “ACM International Collegiate Programming Contest World Finals”, por lo general celebrado el siguiente marzo o a mediados de abril.
 
