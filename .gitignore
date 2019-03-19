@@ -1,5 +1,6 @@
 # IntelliJ IDE 
 *.idea
+*.directory
 
 # Prerequisites
 *.d
