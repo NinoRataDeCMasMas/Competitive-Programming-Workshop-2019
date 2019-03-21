@@ -11,23 +11,23 @@ using namespace std;
  */
 unsigned int GCD( unsigned long a, unsigned long b )
 {
-	return (b == 0) ? a : GCD(b, a%b); 
+    return (b == 0) ? a : GCD(b, a%b); 
 }
 /**
  * @brief  Least common multiple.
  */
 unsigned long LCM( unsigned long a, unsigned long b )
 {
-	return (a*b) / GCD(a,b);	
+    return (a*b) / GCD(a,b);	
 }
 /**
  * @brief  Main function.
  */
 int main( void )
 {
-	unsigned long a, b;	
-	cin >> a >> b;
-	
-	cout << LCM(a,b) << endl;	
-	return 0;
+    unsigned long a, b;
+    cin >> a >> b;
+
+    cout << LCM(a,b) << endl;
+    return 0;
 }

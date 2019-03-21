@@ -21,14 +21,24 @@ Es un deporte mental en el cual los participantes resuelven un conjunto de probl
 
 El concurso ACM ICPC es la competencia más importante y con mayor prestigio en el ámbito de la programación, que se lleva a cabo entre equipos de estudiantes que representan a las instituciones de educación superior. Entre marzo y octubre de cada año se realizan concursos preliminares a nivel nacional y los equipos mejor posicionados ganan un pase para competir en la Fase Regional que se celebra en Noviembre y comprende a México y Centro América. Finalmente los dos o tres mejores equipos dependiendo del desempeño alcanzado tienen la oportunidad de avanzar al “ACM International Collegiate Programming Contest World Finals”, por lo general celebrado el siguiente marzo o a mediados de abril.
 
-## Comandos de compilación en C/C++
+## Comandos de compilación
+### C/C++
 
 Si bien los concursos de esta índole permiten el uso de diversos lenguajes de programación como _java_, _haskell_ o _javascript_, el uso generalizado de _C/C++_ lo hace ser nuestro preferido para resolver problemas de competencia (salvo algunas excepciones que veremos en algunas secciones del taller). Para compilar adecuadamente nuestros códigos competitivos se usarán los siguientes comandos:
 
 *   C (gcc 5.4.0). extensión: .c ```gcc -pipe -O2 -std=c11 <filename> -lm ```
-*   C++ (g++ 5.4.0). extensión: .cc, .cpp ```gcc -pipe -O2 -std=c++14 <filename> -lm ```
+*   C++ (g++ 5.4.0). extensión: .cc .cpp ```g++ -pipe -O2 -std=c++14 <filename> -lm ```
 
 En Linux y MacOS, lo más probable es que tengas el compilador requerido, en este caso _gcc_ y _g++_. En Windows, puedes usar tu compilador favorito o instalar, por ejemplo, _cygwin_.
+
+### Java
+*   (Open JDK 8). extensión: .java ```javac ```
+
+### JavaScript
+*   (Node v6.3.0). extensión: .js ```nodejs ```
+ 
+### Python 3
+*   (CPython 3.4). extensión: .py3 .py ```python3 ```
 
 ## Veredictos
 

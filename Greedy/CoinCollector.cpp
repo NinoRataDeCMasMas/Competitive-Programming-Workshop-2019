@@ -8,23 +8,17 @@
 using namespace std;
 /**
  * @brief  Greedy withdraw.
- *
- * withdraw(X):
- *      if(X == 0) return;
- *      Let Y be the highest valued coin that does not exceed X.
- *      Give the customer Y valued coin.
- *      withdraw(X - Y);
  */
-int maximumCoins( const vector<int> &coins )
+int withdraw( const vector<int> &coins )
 {
-    int sum = 1;
+    int money = 1;
     int maxCoins = coins.size() > 1 ? 2 : 1;
 
     for(int i = 1; i < coins.size() - 1; ++i)
     {
-        if(sum + coins[i] < coins[i + 1])
+        if(money + coins[i] < coins[i + 1])
         {
-            sum += coins[i];
+            money += coins[i];
             maxCoins += 1;
         }
     }
@@ -35,23 +29,25 @@ int maximumCoins( const vector<int> &coins )
  */
 int main( void )
 {
-	int T = 0;
-	cin >>  T;
+    int T = 0;
+    cin >>  T;
 
-	while(T--)
-	{
-	    vector<int> coins;
-		int n = 0;
-		cin >>  n;
+    while(T--)
+    {
+        vector<int> coins;
+        int n = 0;
+        cin >>  n;
 
-		while(n--)
-		{
-		    int x = 0;
+        while(n--)
+        {
+            int x = 0;
             cin >>  x;
             coins.push_back(x);
-		}
-        cout << maximumCoins(coins) << endl;
-	}
+        }
+        cout << withdraw(coins) << endl;
+    }
 
-	return 0;
+    return 0;
 }
+
+

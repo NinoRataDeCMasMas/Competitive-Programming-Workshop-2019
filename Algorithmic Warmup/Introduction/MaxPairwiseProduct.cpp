@@ -12,39 +12,39 @@ using namespace std;
 vector<unsigned long> M;
 
 unsigned long maxPairwise( void )
-{	
-	unsigned long m = 0;
-	for(unsigned int i = 0; i < M.size( ); ++i)
-		for(unsigned int j = 0; j < M.size( ); ++j)
-			if(i != j)
-				if(M[i]*M[j] > 0)
-					m = M[i]*M[j];
-	return m;
+{
+    unsigned long m = 0;
+        for(unsigned int i = 0; i < M.size( ); ++i)
+            for(unsigned int j = 0; j < M.size( ); ++j)
+                if(i != j)
+                    if(M[i]*M[j] > 0)
+                        m = M[i]*M[j];
+    return m;
 }
 /**
  * @brief  Faster maximun pairwise product by sorting.
  */
 unsigned long maxPairwiseSorting( void )
 {
-	unsigned int n = M.size( ) - 1;
-	sort(M.begin( ), M.end( ));
-	return M[n - 1]*M[n];
+    unsigned int n = M.size( ) - 1;
+    sort(M.begin( ), M.end( ));
+    return M[n - 1]*M[n];
 }
 /**
  * @brief  Main function.
  */
 int main( void )
 {
-	unsigned int  n;
-	unsigned long a; 
-	cin >> n;
+    unsigned int  n;
+    unsigned long a; 
+    cin >> n;
 
-	while(n--)
-	{
-		cin >> a;
-		M.push_back(a);
-	}
+    while(n--)
+    {
+        cin >> a;
+        M.push_back(a);
+    }
 
-	cout << maxPairwiseSorting( ) << endl;
-	return 0;
+    cout << maxPairwiseSorting( ) << endl;
+    return 0;
 }
