@@ -5,22 +5,20 @@
  */
 #include <bits/stdc++.h>
 
-using namespace std;
-
-typedef pair<int, int> ii;
-typedef   vector<int>  vi;
-typedef   vector<ii>  vii;
+using ii  = std::pair<int, int>;
+using vi  = std::vector<int>;
+using vii = std::vector<ii>;
 /**
  * @brief  Greedy way to obtain the optimal points.
  */
 vi optimalPoints( vii &segments )
 {
-    sort(segments.begin(), segments.end(), [](auto &x, auto &y) -> bool
+    std::sort(segments.begin(), segments.end(), [](auto &x, auto &y) -> bool
     {
         return x.second < y.second;
     });
     
-    vi points;
+    vi points; points.reserve(segments.size());
     int point = segments[0].second;
     points.push_back(point);
 
@@ -31,7 +29,7 @@ vi optimalPoints( vii &segments )
             points.push_back(point);
         }
         
-    return points;    
+    return points;
 }
 /**
  * @brief  Main function.
@@ -39,20 +37,23 @@ vi optimalPoints( vii &segments )
 int main( void )
 {
     int n = 0;
-    cin >>  n;
+    std::cin >> n;
     
     vii segments;
+    segments.reserve(n);
+    
     for( int i = 0; i < n; ++i )
     {
         int l = 0, r = 0;
-        cin >> l >> r;
-        segments.push_back(make_pair(l,r));
+        std::cin >> l >> r;
+        segments.push_back(std::make_pair(l,r));
     }
     
     vi points = optimalPoints(segments);
     
-    cout << points.size( ) << endl;
-    for(auto i: points) cout << i << ' '; cout << endl;    
+    std::cout << points.size( ) << ' ';
+    for(auto i: points) std::cout << i << ' ';
+    std::cout << std::endl;    
     
     return 0;
 }

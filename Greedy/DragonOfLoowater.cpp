@@ -4,8 +4,6 @@
  * @brief  Code for the competitive programming workshop.
  */
 #include <bits/stdc++.h>
-
-using namespace std;
 /**
  * @brief  Main function.
  */
@@ -15,14 +13,14 @@ int main( void )
 
     while(true)
     {
-        cin >> n >> m;
+        std::cin >> n >> m;
         if(n == 0) break;
-        for(int i = 0; i < n; ++i) cin >> dragon[i];
-        for(int i = 0; i < m; ++i) cin >> knight[i];
+        for(int i = 0; i < n; ++i) std::cin >> dragon[i];
+        for(int i = 0; i < m; ++i) std::cin >> knight[i];
 
         // array dragon + knight are sorted in non decreasing order
-        sort(dragon, dragon + n);
-        sort(knight, knight + m);
+        std::sort(dragon, dragon + n);
+        std::sort(knight, knight + m);
 
         // Greedy selection of knights.
         int gold = 0, d = 0, k = 0;
@@ -35,7 +33,7 @@ int main( void )
             d++; k++;           // next dragon head and knight please
         }
 
-        if(d == n) cout << gold << endl;   // all dragon heads are chopped
+        if(d == n) std::cout << gold << std::endl; // all dragon heads are chopped
         else puts("Loowater is doomed!");
     }
     return 0;

@@ -4,8 +4,6 @@
  * @brief  Code for the competitive programming workshop.
  */
 #include <bits/stdc++.h>
-
-using namespace std;
 /**
  * @brief  Euclidean Algorithm.
  */
@@ -19,9 +17,8 @@ unsigned int GCD( unsigned long a, unsigned long b )
 int main( void )
 {
     unsigned long a, b;
-    cin >> a >> b;
-    
-    cout << GCD(a,b) << endl;
+    std::cin >> a >> b;
+    std::cout << GCD(a,b) << std::endl;
     return 0;
 }
 

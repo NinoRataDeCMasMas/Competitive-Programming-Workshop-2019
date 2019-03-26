@@ -4,8 +4,6 @@
  * @brief  Code for the competitive programming workshop.
  */
 #include <bits/stdc++.h>
-
-using namespace std;
 /**
  * @brief  Recursive exponentiation Algorithm.
  */
@@ -39,7 +37,7 @@ unsigned long itExp( unsigned long x, unsigned long n )
 int main( void )
 {
     unsigned long x, n;
-    cin >> x >> n;
-    cout << exp(x, n) << endl;
+    std::cin >> x >> n;
+    std::cout << exp(x, n) << std::endl;
     return 0;
 }

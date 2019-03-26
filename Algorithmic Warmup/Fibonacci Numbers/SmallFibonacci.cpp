@@ -4,8 +4,6 @@
  * @brief  Code for the competitive programming workshop.
  */
 #include <bits/stdc++.h>
-
-using namespace std;
 /**
  * @brief  Naive Fibonacci numbers.
  */
@@ -37,7 +35,7 @@ unsigned int memoFibo( unsigned long n )
 int main( void )
 {
     unsigned long n;
-    cin >> n;	
-    cout << fibo(n) << endl;
+    std::cin  >>  n;	
+    std::cout << fibo(n) << std::endl;
     return 0;
 }

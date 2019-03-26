@@ -26,8 +26,7 @@ unsigned long LCM( unsigned long a, unsigned long b )
 int main( void )
 {
     unsigned long a, b;
-    cin >> a >> b;
-
-    cout << LCM(a,b) << endl;
+    std::cin >> a >> b;
+    std::cout << LCM(a,b) << std::endl;
     return 0;
 }

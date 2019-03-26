@@ -43,8 +43,8 @@ unsigned long ans = 1;
  */
 int main( void )
 {
-    unsigned long x, n, m;
-    cin >> x >> n >> m;
-    cout << itModExp(x, n, m) << endl;
+    unsigned long x,  n,  m;
+    std::cin >> x >> n >> m;
+    std::cout << itModExp(x, n, m) << std::endl;
     return 0;
 }

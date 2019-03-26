@@ -5,46 +5,47 @@
  */
 #include <bits/stdc++.h>
 
-using namespace std;
+using vi = std::vector<int>; 
 /**
  * @brief  Naive maximun pairwise product.
  */
-vector<unsigned long> M;
-
-unsigned long maxPairwise( void )
+int MaxPairwiseProduct( const vi &M )
 {
-    unsigned long m = 0;
-        for(unsigned int i = 0; i < M.size( ); ++i)
-            for(unsigned int j = 0; j < M.size( ); ++j)
-                if(i != j)
-                    if(M[i]*M[j] > 0)
-                        m = M[i]*M[j];
-    return m;
+    int product = 0;
+    int n = M.size( );
+    
+    for(int i = 0; i < M.size(); ++i)
+        for(int j = i + 1; j < M.size(); ++j)
+            product = std::max(product, M[i]*M[j]);
+    return product;
 }
 /**
  * @brief  Faster maximun pairwise product by sorting.
  */
-unsigned long maxPairwiseSorting( void )
+int maxPairwiseSorting( vi &M )
 {
     unsigned int n = M.size( ) - 1;
-    sort(M.begin( ), M.end( ));
-    return M[n - 1]*M[n];
+
+    std::sort(M.begin( ), M.end( ));
+    return M[n]*M[n - 1];
 }
 /**
  * @brief  Main function.
  */
 int main( void )
 {
-    unsigned int  n;
-    unsigned long a; 
-    cin >> n;
+    vi M; int n, a; 
 
+    std::cin >> n;
+    M.reserve(n);
+    
     while(n--)
     {
-        cin >> a;
+        std::cin  >> a;
         M.push_back(a);
     }
 
-    cout << maxPairwiseSorting( ) << endl;
+    int product = maxPairwiseSorting(M); 
+    std::cout <<  product  << std::endl;
     return 0;
 }

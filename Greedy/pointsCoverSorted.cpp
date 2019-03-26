@@ -5,28 +5,27 @@
  */
 #include <bits/stdc++.h>
 
-using namespace std;
-
-typedef pair<int, int> ii;
-typedef   vector<int>  vi;
-typedef   vector<ii>  vii;
+using ii  = std::pair<int, int>;
+using vi  = std::vector<int>;
+using vii = std::vector<ii>;
 /**
  * @brief  points cover sorted with greedy algorithm.
  */
-vii pointsCoverSorted( vi x, int n = 2 )
+vii pointsCoverSorted( const vi &points, int n = 2 )
 {
-    vii segments;
     int left = 0, l = 0, r = 0;
-
-    while(left < x.size( ))
+    vii segments;
+    segments.reserve(points.size( ));
+    
+    while(left < points.size( ))
     {
-        l = x[left];
-        r = x[left] + n;
+        l = points[left];
+        r = points[left] + n;
 
-        segments.push_back(make_pair(l,r));
+        segments.push_back(std::make_pair(l,r));
         left += 1;
 
-        while(left < x.size( ) && x[left] <= r)
+        while(left < points.size( ) && points[left] <= r)
             left += 1;
     }
     return segments;
@@ -37,16 +36,16 @@ vii pointsCoverSorted( vi x, int n = 2 )
 int main( void )
 {
     vi U; int n = 0;
-    while(cin.peek( ) != '\n')
+    
+    while(std::cin.peek( ) != '\n')
     {
-        cin >> n;
+        std::cin  >> n;
         U.push_back(n);
     }
-
-    sort(U.begin( ), U.end( ));
+    std::sort(U.begin( ), U.end( ));
 
     for(auto p: pointsCoverSorted(U))
-        cout << p.first << ", " << p.second << endl;
+        std::cout << p.first << "," << p.second << std::endl;
     
     return 0;
 }

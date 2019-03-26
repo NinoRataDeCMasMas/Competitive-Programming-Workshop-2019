@@ -4,20 +4,15 @@
  * @brief  Code for the competitive programming workshop.
  */
 #include <bits/stdc++.h>
-
-using namespace std;
 /**
  * @brief  Greedy way.
  */
 int greedyChange( int money )
 {
-    int i = 0, change = 0;
-    
-    vector<int> coins{10, 5, 1};
+    int i = 0, change = 0, coins[3] = {10, 5, 1};
 
     while(money > 0)
-        while(i < coins.size( ))
-        {
+        while(i < 3)
             if(coins[i] > money)
                 ++i;
             else
@@ -25,8 +20,6 @@ int greedyChange( int money )
                 money -= coins[i];
                 change += 1;
             }
-        }
-        
     return change;
 }
 /**
@@ -35,8 +28,8 @@ int greedyChange( int money )
 int main( void )
 {
     int money = 0;
-    cin >>  money;
-    cout << greedyChange(money) << endl;
+    std::cin >> money;
+    std::cout << greedyChange(money) << std::endl;
     return 0;
 }
 

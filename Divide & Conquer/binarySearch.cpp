@@ -5,38 +5,36 @@
  */
 #include <bits/stdc++.h>
 
-using namespace std;
-
-typedef vector<int> vi;
+using vi  = std::vector<int>;
 /**
  * @brief  Binary search algorithm.
  */
-int binarySearch( vi A, int low, int high, int key )
+int binarySearch(const vi &u, int low, int high, int key)
 {
     if(high < low) return -1;
 
     int mid = low + (high - low)/2;
 
-    if(key == A[mid])
+    if(key == u[mid])
         return mid;
 
-    else if(key < A[mid])
-        return binarySearch(A, low, mid - 1, key);
+    else if(key < u[mid])
+        return binarySearch(u, low, mid - 1, key);
     else
-        return binarySearch(A, mid + 1, high, key);
+        return binarySearch(u, mid + 1, high, key);
 }
 /**
  * @brief  Binary search iterative algorithm.
  */
-int itBinarySearch( vi A, int low, int high, int key )
+int itBinarySearch(const vi &u, int low, int high, int key)
 {
     while(low <= high)
     {
         int mid = low + (high - low)/2;
 
-        if(key == A[mid]) return mid;
+        if(key == u[mid]) return mid;
 
-        else if(key < A[mid])
+        else if(key < u[mid])
             high = mid - 1;
         else
             low = mid + 1;
@@ -49,21 +47,22 @@ int itBinarySearch( vi A, int low, int high, int key )
 int main( void )
 {
     int n = 0;
+    std::cin >> n;
+    
+    vi u(n);
+    for(int i = 0; i < u.size( ); ++i) std::cin >> u[i];
 
-    cin >> n;
-    vi  A(n);
-    for(int i = 0; i < A.size( ); ++i) cin >> A[i];
-
-    cin >> n;
-    vi  X(n);
-    for(int i = 0; i < X.size( ); ++i) cin >> X[i];
+    std::cin >> n;
+    vi  x(n);
+    for(int i = 0; i < x.size( ); ++i) std::cin >> x[i];
 
     long N = 0;
-    for(int i = 0; i < X.size( ); ++i)
+    for(int i = 0; i < x.size( ); ++i)
     {
-        int idx = itBinarySearch(A, 0, A.size( )-1, X[i]);
-        N = (idx == -1) ? N : N + 1;	
+        int idx = itBinarySearch(u, 0, u.size( ) - 1, x[i]);
+        N = (idx == -1) ? idx : idx + 1;
+        std::cout << N << ' ';
     }
-    cout << N << endl;
+    std::cout << std::endl;
     return 0;
 } 
