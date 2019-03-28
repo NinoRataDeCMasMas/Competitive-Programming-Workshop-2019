@@ -1,11 +1,26 @@
 /**
  * @file   MaxPairwiseProduct.cpp
- * @date   May 23, 2018
+ * @date   May 28, 2018
  * @brief  Code for the competitive programming workshop.
  */
 #include <bits/stdc++.h>
 
 using vi = std::vector<int>; 
+/**
+ * @brief  VERY Naive maximun pairwise product.
+ */
+int naiveMaxPairwise( const vi &M )
+{
+    int product = 0;
+    int n = M.size( );
+
+        for(int i = 0; i < n; ++i)
+            for(int j = 0; j < n; ++j)
+                if(i != j)
+                    if(M[i]*M[j] > product)
+                        product = M[i]*M[j];
+    return product;
+}
 /**
  * @brief  Naive maximun pairwise product.
  */
@@ -14,8 +29,8 @@ int MaxPairwiseProduct( const vi &M )
     int product = 0;
     int n = M.size( );
     
-    for(int i = 0; i < M.size(); ++i)
-        for(int j = i + 1; j < M.size(); ++j)
+    for(int i = 0; i < n; ++i)
+        for(int j = i + 1; j < n; ++j)
             product = std::max(product, M[i]*M[j]);
     return product;
 }
@@ -45,7 +60,7 @@ int main( void )
         M.push_back(a);
     }
 
-    int product = maxPairwiseSorting(M); 
+    int product = naiveMaxPairwise(M); 
     std::cout <<  product  << std::endl;
     return 0;
 }
