@@ -4,7 +4,7 @@ Tenemos a disposición una calculadora primitiva que puede realizar las siguient
 
 ## Implementación voráz
 
-Pasar de 1 a n es lo mismo que ir de n a 1, cada vez que se divide el número actual por 2 o 3 o se resta 1. Como nos gustaría ir de n a 1 lo más rápido posible, es natural reducir repetidamente n tanto como sea posible. Es decir, en cada paso reemplazamos n por min{n/3, n/2, n - 1} (los términos n/3 y n/2 se usan solo cuando n es divisible por 3 y 2, respectivamente). Hacemos esto hasta que alcanzamos 1. Esto da lugar un algoritmo de naturaleza voráz.
+Pasar de 1 a n es lo mismo que ir de n a 1, cada vez que se divide el número actual por 2 o 3 o se resta 1. Como nos gustaría ir de n a 1 lo más rápido posible, es natural reducir repetidamente n tanto como sea posible. Es decir, en cada paso reemplazamos n por _min{n/3, n/2, n - 1}_ (los términos n/3 y n/2 se usan solo cuando n es divisible por 3 y 2, respectivamente). Hacemos esto hasta que alcanzamos 1. Esto da lugar un algoritmo de naturaleza voráz.
 
 ```C++
 
@@ -20,12 +20,13 @@ int greedyCalculator( int n )
     return numOps;
 }
 ```
-Este algoritmo aparentemente es correcto pero de hecho no lo es. En este caso, pasar de n a min{n/3, n/2, n - 1} no es una elección _segura_.
+Este algoritmo aparentemente es correcto pero de hecho no lo es. En este caso, pasar de n a _min{n/3, n/2, n - 1}_ no es una elección _segura_.
 
 ## Implementación recursiva
 
 En lugar de hacer una elección voraz, decidimos inspeccionar cada una de las posibilidades. Esta estrategia puede implementarse de manera recursiva. Sea ζ una función que devuelva el número mínimo de operaciones solicitadas en el problema. Una posible interpretación recursiva seria la siguiente:
 
+![](https://github.com/NinoRataDeCMasMas/Competitive-Programming-Workshop/blob/master/Dynamic%20Programming/primitiveCalculator/images/primitiveCalcEqn.gif)
 
 Lo anterior podría representarse en forma de pseudocódigo:
 
