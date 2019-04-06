@@ -54,11 +54,3 @@ int main(int argc, char **argv)
     return 0;
 }
 /* EOF */
-
-
-/*
-4
-0 -2 -7 0 9 2 -6 2 -4 1 -4 1 -1 8 0 -2
-*/
-
-
