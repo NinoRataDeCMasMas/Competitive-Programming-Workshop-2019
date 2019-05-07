@@ -64,5 +64,5 @@ int main( void )
     std::cin >> n;
     std::string s;
     std::cin >> s;
-    std::cout << palitos(s, 0);
+    std::cout << chopsticks(s, 0);
 }
