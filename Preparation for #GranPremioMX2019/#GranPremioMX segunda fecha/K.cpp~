@@ -1,0 +1,42 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int mat[302][302];
+int A[302][302];
+
+int main( void )
+{
+	int r, c;
+	cin >> r >> c;
+	for(int i=1; i<=r; i++){
+		for(int j=1; j<=c; j++){
+			cin >> mat[i][j];
+		}
+	}
+	for(int i=1; i<=r; i++){
+		for(int j=1; j<=c; j++){
+			if(mat[i][j] == 0)
+				A[i][j] = A[i][j-1] + 1;
+		}
+	}
+	int res = 0;
+	for(int j=1; j<=c; j++){
+		for(int i=1; i<=r; i++){
+			if(A[i][j] == 0) continue;
+			
+			int extension = 1;
+			int aux = i;
+			while(A[--aux][j] >= A[i][j])
+				extension++;
+			
+			aux = i;
+			while(A[++aux][j] >= A[i][j])
+				extension++;
+				
+			res = max(res, 2 * (A[i][j] + extension));
+		}
+	}
+	cout << res << endl;
+	return 0;
+}

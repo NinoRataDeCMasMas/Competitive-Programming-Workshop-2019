@@ -1,0 +1,38 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+unsigned long long b = 1000000007;
+
+unsigned long long int power(unsigned long long int x, unsigned long long int  n)
+{
+	if(n == 1)        return x % b;
+	else if(n%2 == 0){
+		unsigned long long a = power(x, n/2);
+		if(a*a > b){
+			return a*a % b;
+		} else {
+			return a*a;
+		}
+	}
+	else{
+		unsigned long long a = power(x, (n-1));
+		if(a*x > b){
+			return a*x % b;
+		} else {
+			return a*x;
+		}
+	}
+}
+
+int main( void )
+{
+	int T;
+	cin >> T;
+	while(T--){
+		long long int n;
+		cin >> n;
+		cout << (10*((unsigned long long int)power(9, n-1)))%b << endl;
+	}
+	return 0;
+}
