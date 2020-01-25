@@ -44,7 +44,7 @@ En Linux y MacOS, lo más probable es que tengas el compilador requerido, en est
 
 Los codigos Competitivos se someten a evaluacion al ser enviados a alguna de las paginas anteriores, o al sistema de competicion en una fase del concurso ACM ICPC. Después de unos segundos o minutos, se observara en la web una de estas respuestas:
 
-*   __En la cola (QU):__ el juez está ocupado y no puede asistir a su presentación. Será juzgado lo antes posible.
+*   __En la cola (QU):__ el juez está ocupado y no puede evaluar tu implementación. Será juzgada lo antes posible.
 
 *   __Aceptado (AC):__ OK! ¡Tu programa es correcto! Se produjo la respuesta correcta en un tiempo razonable y dentro del límite de uso de la memoria. ¡Felicidades!
 
@@ -56,9 +56,9 @@ Los codigos Competitivos se someten a evaluacion al ser enviados a alguna de las
 
 *   __Error de tiempo de ejecución (RE):__ su programa falló durante la ejecución (falla de segmentación, excepción de punto flotante ...). La causa exacta no se informa al usuario para evitar la piratería. Asegúrese de que su programa devuelva un código 0 al shell. Si está utilizando Java, siga todas las especificaciones de envío.
 
-*   __Time Limit Exceeded (TL):__ su programa intentó ejecutarse durante demasiado tiempo; este error no le permite saber si su programa alcanzaría la solución correcta al problema o no.
+*   __Tiempo límite exedido (TLE):__ su programa intentó ejecutarse durante demasiado tiempo; este error no le permite saber si su programa alcanzaría la solución correcta al problema o no.
 
-*   __Límite de memoria excedido (ML):__ su programa intentó usar más memoria de la que permite el juez. Si está seguro de que tal problema necesita más memoria, contáctenos.
+*   __Límite de memoria excedido (MLE):__ su programa intentó usar más memoria de la que permite el juez. Si está seguro de que tal problema necesita más memoria, contáctenos.
 
 *   __Límite de salida excedido (OL):__ su programa intentó escribir demasiada información. Esto suele ocurrir si entra en un bucle infinito.
 
